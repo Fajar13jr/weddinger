@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wedding of Fulan & Fulani</title>
     
-    <!-- SEO & Preview -->
-    <meta property="og:title" content="The Wedding of Fulan & Fulani">
-    <meta property="og:description" content="Minggu, 31 Mei 2026 - Masjid Kubah Emas Depok">
-    
-    <!-- Fonts & Libraries -->
+    <!-- Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -21,22 +17,20 @@
             --gold: #D4AF37;
             --burgundy: #8B0000;
             --cream: #FDFDFA;
-            --dark-gold: #b38f2d;
         }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--cream); color: #333; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         .font-cursive { font-family: 'Great Vibes', cursive; }
         
-        /* Premium Background Gradient */
+        /* Background Luxury */
         .bg-royal {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
                         url('https://drive.google.com/uc?export=view&id=1eyU9_RN5gzXDtsQ94XqAFr7W1P-rMLau');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        /* Gold Shimmer Button */
         .btn-royal {
             background: linear-gradient(45deg, #8B0000, #D4AF37, #8B0000);
             background-size: 200% auto;
@@ -45,14 +39,6 @@
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
         .btn-royal:hover { background-position: right center; transform: scale(1.05); }
-
-        /* Floating Animation */
-        .floating { animation: float 3s ease-in-out infinite; }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
 
         .card-gold {
             background: white;
@@ -73,19 +59,17 @@
             cursor: pointer; box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
 
-        /* Flower Fall Effect */
         .petal { position: absolute; color: #fff; pointer-events: none; animation: fall linear infinite; z-index: 50; }
         @keyframes fall { to { transform: translateY(100vh) rotate(360deg); } }
     </style>
 </head>
 <body>
 
-    <!-- Audio Player -->
+    <!-- Audio Player (Lingsir Wengi Instrumental) -->
     <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/afrizal423/statis-web/main/lingsir_wengi.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Music Control -->
     <div class="music-btn hidden" id="musicControl" onclick="toggleMusic()">
         <i id="musicIcon" class="fas fa-compact-disc fa-spin"></i>
     </div>
@@ -93,10 +77,10 @@
     <!-- COVER SECTION -->
     <div id="cover" class="fixed inset-0 z-[9999] flex items-center justify-center text-center text-white bg-royal px-6">
         <div data-aos="zoom-in" data-aos-duration="1500">
-            <div class="mb-6 opacity-80 uppercase tracking-[0.5em] text-sm">The Wedding Invitation</div>
+            <p class="mb-6 opacity-80 uppercase tracking-[0.5em] text-sm">The Wedding of</p>
             <h1 class="text-6xl md:text-8xl font-cursive text-gold mb-4">Fulan & Fulani</h1>
             <div class="h-[2px] w-24 bg-gold mx-auto mb-6"></div>
-            <p class="text-xl md:text-2xl mb-10 tracking-widest uppercase">31 . 05 . 2026</p>
+            <p class="text-xl md:text-2xl mb-10 tracking-widest uppercase">31 MEI 2026</p>
             <button onclick="openInvitation()" class="btn-royal px-12 py-4 rounded-full font-bold tracking-widest uppercase text-sm">
                 Buka Undangan
             </button>
@@ -109,157 +93,79 @@
         <section class="py-20 px-6 text-center relative">
             <div id="petal-container"></div>
             <div class="max-w-3xl mx-auto" data-aos="fade-up">
-                <img src="https://www.transparentpng.com/download/gold-ornament/floral-gold-ornament-free-png-V4t87n.png" class="w-32 mx-auto mb-8 filter sepia" alt="ornament">
+                <img src="https://www.transparentpng.com/download/gold-ornament/floral-gold-ornament-free-png-V4t87n.png" class="w-24 mx-auto mb-8 filter sepia" alt="ornament">
                 <p class="font-cursive text-4xl text-gold mb-6">Assalamu’alaikum Wr. Wb.</p>
-                <p class="italic text-gray-600 leading-relaxed mb-8">
-                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+                <p class="italic text-gray-600 mb-8 px-4">
+                    "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya..."[cite: 1]
                 </p>
-                <p class="font-bold text-burgundy tracking-widest">(QS. AR-RUM: 21)</p>
+                <p class="font-bold text-burgundy tracking-widest">(QS. AR-RUM: 21)[cite: 1]</p>
             </div>
         </section>
 
-        <!-- PROFIL MEMPELAI -->
-        <section class="py-20 bg-white overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <!-- Pria -->
-                    <div class="text-center" data-aos="fade-right">
-                        <div class="relative inline-block mb-8">
-                            <div class="absolute -inset-4 border-2 border-gold rotate-3"></div>
-                            <img src="https://drive.google.com/uc?export=view&id=1akJwjhLp8jPU_z93vsjmeEmbn2j8T5ZA" class="w-72 h-96 object-cover shadow-2xl relative z-10" alt="Fulan">
-                        </div>
-                        <h2 class="text-5xl font-cursive text-burgundy mb-2">Fulan Maulana</h2>
-                        <p class="text-gray-500 text-sm uppercase tracking-widest mb-4">Putra ke-15 dari</p>
-                        <p class="font-bold text-lg text-gray-800">Bapak Suwiryo Diningrat</p>
-                        <p class="font-bold text-lg text-gray-800">& Ibu Retno Ngademiyati</p>
-                    </div>
-
-                    <!-- Wanita -->
-                    <div class="text-center" data-aos="fade-left">
-                        <div class="relative inline-block mb-8">
-                            <div class="absolute -inset-4 border-2 border-gold -rotate-3"></div>
-                            <img src="https://drive.google.com/uc?export=view&id=1NtmC46CDoKrTPfmM9NSjCH91uoXKMI7G" class="w-72 h-96 object-cover shadow-2xl relative z-10" alt="Fulani">
-                        </div>
-                        <h2 class="text-5xl font-cursive text-burgundy mb-2">Fulani</h2>
-                        <p class="text-gray-500 text-sm uppercase tracking-widest mb-4">Putri ke-20 dari</p>
-                        <p class="font-bold text-lg text-gray-800">Bapak Cokro Wolo</p>
-                        <p class="font-bold text-lg text-gray-800">& Ibu Dewi Astuti</p>
-                    </div>
+        <!-- PROFIL -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16">
+                <div class="text-center" data-aos="fade-right">
+                    <img src="https://drive.google.com/uc?export=view&id=1akJwjhLp8jPU_z93vsjmeEmbn2j8T5ZA" class="w-64 h-80 object-cover mx-auto rounded-t-full border-4 border-gold shadow-2xl mb-6" alt="Fulan">
+                    <h2 class="text-4xl font-cursive text-burgundy mb-2">Fulan Maulana</h2>
+                    <p class="text-sm text-gray-500 uppercase tracking-widest">Putra ke-15 Bapak Suwiryo & Ibu Retno[cite: 1]</p>
+                </div>
+                <div class="text-center" data-aos="fade-left">
+                    <img src="https://drive.google.com/uc?export=view&id=1NtmC46CDoKrTPfmM9NSjCH91uoXKMI7G" class="w-64 h-80 object-cover mx-auto rounded-t-full border-4 border-gold shadow-2xl mb-6" alt="Fulani">
+                    <h2 class="text-4xl font-cursive text-burgundy mb-2">Fulani</h2>
+                    <p class="text-sm text-gray-500 uppercase tracking-widest">Putri ke-20 Bapak Cokro & Ibu Dewi[cite: 1]</p>
                 </div>
             </div>
         </section>
 
-        <!-- ACARA & GOOGLE MAPS -->
-        <section class="py-20 bg-royal text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-5xl font-cursive text-gold mb-12" data-aos="zoom-in">The Wedding Day</h2>
-                
-                <div id="countdown" class="flex justify-center gap-4 mb-16" data-aos="fade-up">
-                    <div class="bg-black/40 backdrop-blur-md p-4 rounded-xl border border-gold w-24">
-                        <span id="days" class="text-3xl font-black text-gold block">00</span>
-                        <small class="uppercase text-[10px] tracking-tighter">Hari</small>
-                    </div>
-                    <div class="bg-black/40 backdrop-blur-md p-4 rounded-xl border border-gold w-24">
-                        <span id="hours" class="text-3xl font-black text-gold block">00</span>
-                        <small class="uppercase text-[10px] tracking-tighter">Jam</small>
-                    </div>
-                    <div class="bg-black/40 backdrop-blur-md p-4 rounded-xl border border-gold w-24">
-                        <span id="minutes" class="text-3xl font-black text-gold block">00</span>
-                        <small class="uppercase text-[10px] tracking-tighter">Menit</small>
-                    </div>
+        <!-- LOKASI MAPS VALID -->
+        <section class="py-20 bg-royal text-white text-center">
+            <h2 class="text-4xl text-gold font-cursive mb-12">Waktu & Tempat</h2>
+            <div class="card-gold p-10 text-gray-800 max-w-lg mx-auto" data-aos="zoom-in">
+                <i class="fas fa-map-marker-alt text-burgundy text-4xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Masjid Kubah Emas</h3>
+                <p class="text-sm mb-6 opacity-75 italic">Jl. Raya Meruyung, Kec. Limo, Kota Depok[cite: 1]</p>
+                <div class="border-y border-gold py-4 mb-6">
+                    <p class="font-bold">Minggu, 31 Mei 2026</p>
+                    <p>Akad: 09:00 WIB | Resepsi: 11:00 WIB[cite: 1]</p>
                 </div>
-
-                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                    <!-- Akad -->
-                    <div class="card-gold p-10 text-gray-800" data-aos="flip-left">
-                        <div class="text-gold text-4xl mb-4"><i class="fas fa-ring"></i></div>
-                        <h3 class="text-3xl text-burgundy mb-4">Akad Nikah</h3>
-                        <div class="space-y-2 mb-6 font-semibold">
-                            <p>Minggu, 31 Mei 2026</p>
-                            <p>Pukul 09:00 WIB</p>
-                        </div>
-                        <p class="text-sm opacity-70 italic">Masjid Kubah Emas (Dian Al-Mahri)</p>
-                    </div>
-
-                    <!-- Resepsi -->
-                    <div class="card-gold p-10 text-gray-800" data-aos="flip-right">
-                        <div class="text-gold text-4xl mb-4"><i class="fas fa-utensils"></i></div>
-                        <h3 class="text-3xl text-burgundy mb-4">Resepsi</h3>
-                        <div class="space-y-2 mb-6 font-semibold">
-                            <p>Minggu, 31 Mei 2026</p>
-                            <p>Pukul 11:00 WIB - Selesai</p>
-                        </div>
-                        <a href="https://maps.app.goo.gl/oY2YF3GjM68P3YmS6" target="_blank" class="btn-royal px-8 py-3 rounded-lg text-xs font-bold inline-block">
-                            <i class="fas fa-map-marked-alt mr-2"></i> PETUNJUK LOKASI (MAPS)
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GALERI -->
-        <section class="py-20">
-            <h2 class="text-center text-5xl font-cursive text-burgundy mb-16" data-aos="fade-down">Our Precious Moments</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 px-4 max-w-6xl mx-auto">
-                <div class="overflow-hidden border-2 border-gold" data-aos="zoom-in"><img src="https://drive.google.com/uc?export=view&id=1eyU9_RN5gzXDtsQ94XqAFr7W1P-rMLau" class="hover:scale-110 transition duration-700 w-full h-64 object-cover"></div>
-                <div class="overflow-hidden border-2 border-gold" data-aos="zoom-in" data-aos-delay="100"><img src="https://drive.google.com/uc?export=view&id=1fbojIG3R_vQTIG2zipxfPrEnQxG3O5Xj" class="hover:scale-110 transition duration-700 w-full h-64 object-cover"></div>
-                <div class="overflow-hidden border-2 border-gold" data-aos="zoom-in" data-aos-delay="200"><img src="https://drive.google.com/uc?export=view&id=1rRcJhnlMJH35URvAS5LMN25FQOEUNE52" class="hover:scale-110 transition duration-700 w-full h-64 object-cover"></div>
-                <div class="overflow-hidden border-2 border-gold" data-aos="zoom-in"><img src="https://drive.google.com/uc?export=view&id=1d_h24rb5AqPh8F1L74VbAOBWPUTsfTAE" class="hover:scale-110 transition duration-700 w-full h-64 object-cover"></div>
-                <div class="overflow-hidden border-2 border-gold" data-aos="zoom-in" data-aos-delay="100"><img src="https://drive.google.com/uc?export=view&id=1wF15RrpFYI2FHM4nx1sHRDgkyYdMnmYb" class="hover:scale-110 transition duration-700 w-full h-64 object-cover"></div>
-                <div class="overflow-hidden border-2 border-gold" data-aos="zoom-in" data-aos-delay="200"><img src="https://drive.google.com/uc?export=view&id=1uf8HGQl7M1ULYcvWoFoo3nJicVNwFIyq" class="hover:scale-110 transition duration-700 w-full h-64 object-cover"></div>
+                <a href="https://maps.app.goo.gl/oY2YF3GjM68P3YmS6" target="_blank" class="btn-royal px-10 py-3 rounded-lg text-xs font-bold inline-block">
+                    <i class="fas fa-directions mr-2"></i> PETUNJUK JALAN (MAPS)[cite: 1]
+                </a>
             </div>
         </section>
 
         <!-- AMPLOP DIGITAL -->
-        <section class="py-20 bg-gray-50 border-y border-gold">
-            <div class="container mx-auto px-6 text-center max-w-4xl">
-                <h2 class="text-4xl text-burgundy mb-6 font-cursive" data-aos="fade-up">Kado Digital</h2>
-                <p class="text-gray-600 mb-12 italic" data-aos="fade-up">Doa restu Anda merupakan karunia terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, silakan melalui:</p>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- CIMB -->
-                    <div class="card-gold p-8" data-aos="fade-up">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/CIMB_Niaga_logo.svg" class="h-10 mx-auto mb-6 grayscale hover:grayscale-0 transition" alt="CIMB">
-                        <p class="font-black text-xl mb-1">665556655678884</p>
-                        <p class="text-xs text-gray-500 uppercase mb-6 tracking-widest">a.n Fulan Maulana</p>
-                        <button onclick="copyRek('665556655678884')" class="btn-royal px-6 py-2 rounded-full text-[10px]">SALIN NO REK</button>
-                    </div>
+        <section class="py-20 bg-gray-50 text-center">
+            <h2 class="text-3xl text-burgundy mb-10 font-cursive">Kado Digital</h2>
+            <div class="flex flex-wrap justify-center gap-8 px-6 max-w-5xl mx-auto">
+                <div class="card-gold p-8 w-80" data-aos="fade-up">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/CIMB_Niaga_logo.svg" class="h-8 mx-auto mb-6" alt="CIMB">
+                    <p class="font-black text-xl mb-1">665556655678884</p>
+                    <p class="text-xs text-gray-500 mb-6 uppercase">a.n Fulan Maulana[cite: 1]</p>
+                    <button onclick="copyRek('665556655678884')" class="btn-royal px-6 py-2 rounded-full text-[10px]">SALIN NO REKENING[cite: 1]</button>
+                </div>
 
-                    <!-- BRI -->
-                    <div class="card-gold p-8" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_Logo.svg" class="h-10 mx-auto mb-6 grayscale hover:grayscale-0 transition" alt="BRI">
-                        <p class="font-black text-xl mb-1">55555678888997</p>
-                        <p class="text-xs text-gray-500 uppercase mb-6 tracking-widest">a.n Fulan Maulana</p>
-                        <button onclick="copyRek('55555678888997')" class="btn-royal px-6 py-2 rounded-full text-[10px]">SALIN NO REK</button>
-                    </div>
-
-                    <!-- BSI -->
-                    <div class="card-gold p-8" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia_logo.svg" class="h-10 mx-auto mb-6 grayscale hover:grayscale-0 transition" alt="BSI">
-                        <p class="font-black text-xl mb-1">66777889999</p>
-                        <p class="text-xs text-gray-500 uppercase mb-6 tracking-widest">a.n Fulani Maulani</p>
-                        <button onclick="copyRek('66777889999')" class="btn-royal px-6 py-2 rounded-full text-[10px]">SALIN NO REK</button>
-                    </div>
+                <div class="card-gold p-8 w-80" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia_logo.svg" class="h-8 mx-auto mb-6" alt="BSI">
+                    <p class="font-black text-xl mb-1">66777889999</p>
+                    <p class="text-xs text-gray-500 mb-6 uppercase">a.n Fulani Maulani[cite: 1]</p>
+                    <button onclick="copyRek('66777889999')" class="btn-royal px-6 py-2 rounded-full text-[10px]">SALIN NO REKENING[cite: 1]</button>
                 </div>
             </div>
         </section>
 
-        <!-- PENUTUP -->
-        <footer class="py-32 bg-royal text-white text-center relative">
-            <div class="max-w-4xl mx-auto px-6" data-aos="zoom-in">
-                <p class="mb-12 leading-relaxed opacity-90 font-light">Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih yang sebesar-besarnya.</p>
-                <p class="text-gold font-cursive text-5xl mb-12 italic">Mugi Sakinah Mawaddah Warahmah</p>
-                <div class="mb-12">
-                    <p class="text-xs tracking-[0.4em] uppercase mb-4">Kami Yang Berbahagia</p>
-                    <h2 class="text-5xl font-cursive text-gold">Fulan & Fulani</h2>
-                </div>
-                <p class="text-[10px] tracking-[0.5em] opacity-30 mt-20 uppercase">Digital Invitation by Gemini Exclusive</p>
+        <!-- FOOTER -->
+        <footer class="py-20 bg-royal text-white text-center">
+            <div data-aos="zoom-in">
+                <p class="mb-4 opacity-80">Terima kasih atas doa & kehadiran Anda</p>
+                <h2 class="text-5xl font-cursive text-gold">Fulan & Fulani</h2>
+                <p class="mt-12 text-[10px] tracking-widest opacity-30 uppercase">Digital Invitation by Gemini Exclusive[cite: 1]</p>
             </div>
         </footer>
 
     </main>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
@@ -276,7 +182,7 @@
             main.classList.remove('hidden');
             musicCtrl.classList.remove('hidden');
             
-            audio.volume = 0.4;
+            audio.volume = 0.5;
             audio.play();
             createPetals();
             
@@ -286,11 +192,9 @@
         function toggleMusic() {
             if (audio.paused) {
                 audio.play();
-                musicIcon.classList.add('fa-spin');
                 musicIcon.className = 'fas fa-compact-disc fa-spin';
             } else {
                 audio.pause();
-                musicIcon.classList.remove('fa-spin');
                 musicIcon.className = 'fas fa-pause-circle';
             }
         }
@@ -300,31 +204,19 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Tersalin',
-                text: 'Nomor rekening telah disalin ke clipboard',
+                text: 'Nomor rekening telah disalin ke clipboard',[cite: 1]
                 confirmButtonColor: '#D4AF37'
             });
         }
 
-        // Countdown Timer
-        const targetDate = new Date("May 31, 2026 09:00:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        }, 1000);
-
-        // Falling Flower Effect
         function createPetals() {
             const container = document.getElementById('petal-container');
-            for(let i=0; i<20; i++) {
+            for(let i=0; i<15; i++) {
                 const petal = document.createElement('div');
                 petal.className = 'petal';
                 petal.innerHTML = '🌸'; 
                 petal.style.left = Math.random() * 100 + 'vw';
                 petal.style.animationDuration = (Math.random() * 5 + 3) + 's';
-                petal.style.fontSize = (Math.random() * 20 + 10) + 'px';
                 petal.style.opacity = Math.random();
                 container.appendChild(petal);
             }
